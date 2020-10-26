@@ -1,0 +1,36 @@
+<!-- <header [hidden]="this.serviceP.user.name!=null">
+  
+    <mat-toolbar >
+      <mat-toolbar-row> -->
+          <!-- <span>למצוא בקליק</span> -->
+          <!-- <span class="example-spacer"></span> -->
+          <!-- <span><a ><img src="../../../assets/LogoP.jpg" alt="" class="imgNav"></a> </span>
+             <span class="example-spacer"></span>
+             <ul  class="nav nav-pills">
+                <li class="nav-item"> <button mat-button [routerLink]="['/login']">כניסה</button></li>
+             <li class="nav-item"> <button mat-button [routerLink]="['/newLogin']">הרשמה</button></li>
+      
+             </ul>
+            
+       
+      </mat-toolbar-row>
+  </mat-toolbar>
+  <br />
+  <span><a href="menue.component.html"><img src="../../../assets/LogoP.png" alt="" class="imgNav"></a></span>
+  <img src="../../../assets/LogoP.png" alt="" class="imgNav"> -->
+
+<!-- </header> -->
+
+<nav>
+
+  <!-- <app-menue></app-menue> -->
+  <app-menue [hidden]="this.serviceP.user.name===null"></app-menue>
+
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+<app-footere></app-footere>
+<script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+<script>paypal.Buttons().render('body');</script>

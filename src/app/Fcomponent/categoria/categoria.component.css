@@ -1,0 +1,25 @@
+div.panel-body{
+    background-color: #e21559;
+    color:#dacfd2;
+    border-radius: 5px;
+    border: grey solid ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25pX;
+}
+div.panel-body:hover{
+    cursor: pointer;
+    
+
+  
+}
+.cursors > div hover {
+    opacity: 0.25 ;
+    float: left;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    border:1px solid #ccc;
+    width: 20%;
+    padding: 10px 2px;
+    text-align: center;
+    white-space: nowrap;
+       }

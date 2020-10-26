@@ -1,0 +1,193 @@
+body{
+    direction: rtl;
+ font-family: Tahoma;
+ font-size: 50px;;
+ background: linear-gradient(0deg, rgb(225, 238, 255) 0%, rgb(235, 240, 244) 100%);
+
+}
+
+div{
+    font-family: Tahoma;
+ font-size: 50px;;
+}
+/* .aaa.ui-menubar{  background-color: brown !important;
+    color:red !important;
+}
+.aaa.ui-menu-list{ background-color: brown !important;
+    color:red !important;}
+    .aaa.ui-menuitem	{ background-color: brown !important;
+    color:red !important;}
+    .aaa.ui-menuitem-text{ background-color: brown !important;
+    color:red !important;}
+    .aaa.ui-menuitem-icon{ background-color: brown !important;
+    color:red !important;}	
+    .aaa.ui-submenu-icon{ background-color: brown !important;
+    color:red !important;} */
+    
+
+    .glyphicon {
+        margin-right: 10px;
+    }
+    
+    /* Highlighting rules for nav menu items */
+    li.link-active a,
+    li.link-active a:hover,
+    li.link-active a:focus {
+        /* background-color: #4189C7; */
+        color: white;
+    }
+    
+    /* Keep the nav menu independent of scrolling and on top of other items */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    
+    @media (min-width: 768px) {
+        /* On small screens, convert the nav menu to a vertical sidebar */
+        .main-nav {
+            height: 100%;
+            width: calc(25% - 20px);
+        }
+        .navbar {
+            border-radius: 0px;
+            border-width: 0px;
+            height: 100%;
+        }
+        .navbar-header {
+            float: none;
+        }
+        .navbar-collapse {
+            border-top: 1px solid #e71264;
+            padding: 0px;
+        }
+        .navbar ul {
+            float: none;
+            height: 250px;    
+        }
+        .navbar li {
+            float: none;
+            font-size: 16px;
+            margin: 6px;
+        }
+        .navbar li a {
+            padding: 10px 16px;
+            border-radius: 4px;
+        }
+        .navbar a {
+            /* If a menu item's text is too long, truncate it */
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    
+    .example-icon {
+      padding: 0 14px;
+    }
+    
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+    
+    .example-card {
+      max-width: 400px;
+    }
+    
+    
+    /* body {
+        text-align: center; */
+        /* scroll-behavior: unset; */
+        /* position: fixed; */
+        /* overflow: hidden;
+    } */
+    mat-toolbar {
+        background-color: #e71264;
+        /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+        font-size: 16px;
+        color:white;
+        }
+    
+    button {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        color: white;
+        /* width: 25px;
+        height: 25px; */
+    }
+    
+   
+    
+    .imgNav {
+        width: 100px;
+        height: 80px;
+         position: relative;
+        /* right: 750px;  */
+        top: 0;
+        transition: all 0.2s ease;
+    }
+    
+    button:hover {
+        color: #251f22;
+    }
+    
+    span:hover {
+        color: #e71264;
+    }
+    
+    a {
+        /* background-color: #4f3753; */
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        color: white;
+    }
+    
+    a:hover {
+        color: #e71264;
+        text-decoration: none;
+    }
+    span{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 22px;
+    }
+    ul {
+        background-color: #e71264;
+        height: 50px;
+        /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+      text-align: right;
+      /* direction: ltr; */
+    }
+    /* li{
+        font-family: 'M PLUS 1p', sans-serif;
+        font-size: 25px;
+    } */
+    mat-menu-item{
+        background-color: #e71264;
+        /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+        font-size: 16px;
+        color:white; 
+    }
+ .btnmtmu {
+        /* padding-top: 8px;
+        padding-bottom: 8px; */
+        background-color: #e71264;
+        /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+        font-size: 16px;
+        color:white; 
+    }
+    footer{
+        text-align: center;
+background: #ffffff;
+padding: 7px 0;
+width: 100%;
+margin: 0 auto;
+margin-top: 5%;
+/* position: relative; */
+border-top: solid 1px #b7b8b9;
+height: 35px; 
+
+    }

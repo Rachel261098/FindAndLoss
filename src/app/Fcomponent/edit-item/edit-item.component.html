@@ -1,0 +1,91 @@
+<!-- <form #editForm="ngForm">
+
+
+<label>{{serviceI.itemdescribe}}</label>
+
+
+<div class="row">
+    <div class="panel panel-default col-sm-4" style="float: right">
+      
+      <label *ngIf="serviceI.itemForL==='found'">תאריך מציאה</label>
+      <label *ngIf="serviceI.itemForL==='lost'">תאריך אבידה</label> -->
+  
+      <!-- <input type="date" [(ngModel)]=" this.editDate" name="date_found_lost" #date_found_lost required
+        (blur)="checkDate(this.serviceI.itemToEdit.date_found_lost,date_found_lost)"> -->
+        <!-- <input type="date"  [ngModel]="this.editDate | date:'yyyy-MM-dd'"  name="date_found_lost" #date_found_lost required
+        (blur)="checkDate(this.editDate,date_found_lost)"
+                 (ngModelChange)="this.editDate = $event">
+      <div [hidden]="!messageCheckDate">תאריך לא יכול להיות מתאריך העדכון הראשוני !</div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="panel panel-default col-sm-6" style="float: right">
+      <label>הערה</label>
+      <input type="text" [(ngModel)]="this.serviceI.itemToEdit.comment" name="comment" style="float: left">
+    </div>
+  </div>
+
+
+
+<div *ngFor="let k of this.serviceI.itemToEdit.listKriterion"> 
+<app-edit-kriterion [kriterionId]="k.kriterion_id" [name]="k.nameKriterion" [valueId]="k.value_id" [operatorId]="k.operator_id"
+[options]="k.option_values" [type]="this.serviceI.itemToEdit.ForL"></app-edit-kriterion>
+</div>
+<button (click)="save()">שמור</button>
+<button (click)="cancel()">ביטול</button>
+</form> -->
+
+
+
+
+
+<form #editForm="ngForm" class="form container example-right-align" dir="rtl">
+  <label>{{serviceI.itemdescribe}}</label>
+  <div class="row">
+    <div>
+      <div class="panel panel-default col-md-12 col-sm-10" style="text-align: right;">
+        <mat-form-field class="example-full-width">
+          <mat-label dir="right" *ngIf="serviceI.itemForL==='found'"> תאריך מציאה </mat-label>
+          <mat-label *ngIf="serviceI.itemForL==='lost'">תאריך אבידה</mat-label>
+
+          <!-- <input matInput type="date" [(ngModel)]="this.editDate | date:'yyyy-MM-dd'"  name="date_found_lost"
+            #date_found_lost required (blur)="checkDate(this.editDate,date_found_lost)" (ngModelChange)="this.editDate = $event"> -->
+            <!-- <input matInput type="date" [(ngModel)]="this.editDate"  name="date_found_lost"
+            #date_found_lost required (blur)="checkDate(this.editDate,date_found_lost)" > -->
+            <input type="date" matInput [ngModel]="this.editDate | date:'yyyy-MM-dd'"  name="date_found_lost" #date_found_lost required
+        (blur)="checkDate(this.editDate,date_found_lost)"
+                 (ngModelChange)="this.editDate = $event">
+          <!-- <mat-icon matDatepickerToggleIcon>date_range</mat-icon>  -->
+          <mat-datepicker-toggle matSuffix [for]="picker">
+
+          </mat-datepicker-toggle>
+          <mat-error [hidden]="!messageCheckDate">תאריך לא יכול להיות גדול מתאריך העדכון!</mat-error>
+
+
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default col-md-12 col-sm-12">
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>הערה</mat-label>
+          <textarea matInput #message maxlength="50" [(ngModel)]="this.serviceI.itemToEdit.comment" name="comment">
+            <mat-hint >{{message.length}} / 50</mat-hint>
+      </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div *ngFor="let k of this.serviceI.itemToEdit.listKriterion" class="panel panel-default col-md-12 col-sm-10">
+      <app-edit-kriterion [kriterionId]="k.kriterion_id" [name]="k.nameKriterion" [valueId]="k.value_id"
+        [operatorId]="k.operator_id" [options]="k.option_values" [type]="this.serviceI.itemToEdit.ForL">
+      </app-edit-kriterion>
+    </div>
+<div style="float: left;">
+    <input type="button" value="שמור" (click)="save()" class="inpbtn">
+    <input type="button" value="ביטול" (click)="cancel()" class="inpbtn">
+  </div>
+  </div>
+</form>

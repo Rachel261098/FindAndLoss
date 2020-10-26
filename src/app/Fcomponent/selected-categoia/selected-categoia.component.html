@@ -1,0 +1,16 @@
+<div class="row" style="text-align: right;">
+
+                <div *ngFor="let s of serviceC.selectCategory" class="col-sm-2" style="float:right">
+                        <a (click)="goBack(s.category_id)">
+                                <!-- <i class="material-icons">
+                                        arrow_back_ios
+                                </i> -->
+                                <i>
+                                        <<
+                                </i>
+                                {{ s.describe}}
+                        </a>
+                </div>
+</div>
+                <!-- [id]="s.category_id" [name]="s.describe" > -->
+      

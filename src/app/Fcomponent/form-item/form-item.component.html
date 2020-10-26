@@ -1,0 +1,154 @@
+
+<form #formSearch="ngForm" class="form container example-right-align" dir="rtl">
+  <div [hidden]="this.again!=null" *ngIf="this.serviceC.filterListCategories.length===0">
+    <app-new-category (close)="changeCategoryId($event)" [iconPlus]="true"> </app-new-category>
+  </div>
+<div [hidden]="from==false">
+  {{this.serviceI.newItem.describe}}
+</div>
+  <div class="row">
+    <div>
+      <h1>מלא את מאפייני החפץ בשדות התואמים:</h1>
+      <br>
+      <!-- <div class="panel panel-default col-md-12 col-sm-10" >
+      <mat-form-field class="example-full-width">
+        <input matInput  [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="בחר תאריך">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div> -->
+      <div class="panel panel-default col-md-12 col-sm-12" style="text-align: right;">
+        <mat-form-field class="example-full-width" >
+          <mat-label dir="right"  *ngIf="type==='found'"> תאריך מציאה </mat-label>
+          <mat-label   *ngIf="type==='lost'">תאריך אבידה</mat-label>
+
+          <input type="date" matInput [ngModel]="this.serviceI.date | date:'yyyy-MM-dd'"  name="date_found_lost" #date_found_lost required
+          (blur)="checkDate(this.serviceI.date,date_found_lost)"
+                   (ngModelChange)="this.serviceI.date = $event">
+          <!-- <mat-icon matDatepickerToggleIcon>date_range</mat-icon>  -->
+          <mat-datepicker-toggle matSuffix [for]="picker">
+
+          </mat-datepicker-toggle>
+          <div [hidden]="!messageCheckDate" class="divWar">תאריך לא יכול להיות גדול מהיום!</div>
+          <div [hidden]="!messageFullDate" class="divWar">חובה למלא תאריך!</div>
+
+
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default col-md-12 col-sm-12">
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>מיקום</mat-label>
+          <input [value]="this.serviceI.newItem.nameAddress" matInput ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event,place)" 
+           required name="place" #place /> 
+          <!-- <div [hidden]="!messageCheckPlace" style="color: red;">תאריך לא יכול להיות גדול מהיום!</div> -->
+          <div [hidden]="!messageFullPlace"class="divWar">חובה למלא מיקום!</div>
+
+        </mat-form-field>
+      </div>
+
+    </div>
+   
+    <div class="panel panel-default col-md-12 col-sm-12">
+      <div class="row">
+        <mat-form-field class="example-full-width">
+          <mat-label>הערה</mat-label>
+          <!--<input type="text" matInput [(ngModel)]="this.serviceI.newItem.comment" name="comment"> -->
+          <textarea matInput #message maxlength="50" [(ngModel)]="this.serviceI.newItem.comment" name="comment">
+        <!-- <mat-hint align="start"><strong>חרגת מ50 תוים</strong> </mat-hint> -->
+        <mat-hint >{{message.length}} / 50</mat-hint>
+      </textarea>
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <!-- <label>הערה</label>
+      <input type="text" [(ngModel)]="newItem.comment" name="comment">
+      </div> -->
+    <div *ngFor="let i of this.serviceK.listKriterion" class="panel panel-default col-md-12 col-sm-12">
+      <app-kriterion [kriterionId]="i.kriterion_id" [name]="i.name" [valueId]="i.value_id" [operatorId]="i.operator_id"
+        [options]="i.option_values" [type]="type" [itemid]="this.again"></app-kriterion>
+
+    </div>
+
+
+    <!-- <button type="button" (click)=" this.serviceK.displayNewKriteion=true" pButton  label="הוספת מאפיין"></button> -->
+
+    <app-new-kriterion [hidden]="!this.serviceK.displayNewKriteion" [type]="type"
+      [idCategory]="this.serviceC.categoryHight" (close)="closeK($event)"></app-new-kriterion>
+
+    <div *ngIf="serviceP.listPerson!=0" class="col-md-12 col-sm-12">
+    <table>
+      <tr>
+        <th>שם</th>
+        <th>הערה</th>
+        <th>תאריך</th>
+        <th>מיקום</th>
+        <th> מייל</th>
+      </tr>
+      <tr *ngFor="let p of this.serviceP.listPerson">
+        <td> {{p.name}} </td>
+        <td> {{p.comment}} </td>
+        <td> {{p.date_found_lost| date:'dd-MM-yyyy'}} </td>
+        <td>{{p.nameAddress}}</td>
+      <td style="text-align: center;">
+          <i  class="material-icons" (click)="displyTextdMail(p.mail)">
+            email
+            </i></td>
+        </tr>
+      </table>
+      <div *ngIf="textMail" class="sendMail">
+        <mat-card class="sendMail-content">
+          <mat-card-title style="color:#4d4646;">כתוב הודעה</mat-card-title>
+    
+          <!-- <mat-form-field class="example-full-width"> -->
+            <textarea  [(ngModel)]="mail.message" name="m" style="height: 184px;text-align: right;"></textarea>
+          <!-- </mat-form-field> -->
+    
+          <button style="float: left" mat-button color="accent"(click)="sendMail()" >שלח</button>
+          <button style="float: left" mat-button color="accent"(click)="cancel1()" >ביטול</button>
+        </mat-card>
+      </div>
+     
+    
+    </div>
+    
+    <div [hidden]="dispalySearch" style=" margin: 0 10px;">
+      <mat-progress-spinner color="accent" mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div *ngIf="this.serviceP.noPerson" class="divWar2">
+      לא נימצאו נתונים התואמים לחיפוש 
+      <br>באפשרותך לשמור חיפוש זה
+      <br>עידכונים ישלחו למייל
+    </div>
+
+
+  </div>
+  <div class="row">
+    <input  style="float: right;" type="button" value="הוספת מאפיין" (click)="startData()"
+      class="inpbtn">
+    <input style="float: left;" type="button" value="חיפוש" (click)="search()" class="inpbtn">
+    <input *ngIf="from==false" style="float: left;" type="button" [disabled]="!disabledSave && this.type=='lost'"
+      value="שמור נתונים" (click)="save()" class="inpbtn">
+      <input *ngIf="from==true" style="float: left;" type="button"
+      value="שמור שינויים" (click)="saveChange()" class="inpbtn">
+      <input *ngIf="from==true" style="float: left;" type="button"
+      value="חזור" (click)="cancel()" class="inpbtn">
+  </div>
+  
+
+
+
+
+</form>
+
+
+
+
+

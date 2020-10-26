@@ -1,0 +1,339 @@
+/*  
+    table { 
+        width: 80%; 
+        border-collapse: collapse; 
+        margin:50px auto;
+        direction: rtl;
+        text-align: right;
+        }
+    
+    tr:nth-of-type(odd) { 
+        background: #eee; 
+        }
+    
+    th { 
+        background: #e71264; 
+        color: white; 
+        font-weight: bold; 
+        text-align: center;
+        }
+        th {
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            font-size: 18px;
+            text-align: center;
+        }
+    td { 
+        padding: 10px; 
+            border: 1px solid #ccc; 
+            font-size: 18px;
+        text-align: right;
+        }
+        i{
+            cursor: pointer;
+            text-align: center;
+        }
+        i:hover{
+           color:  #e21559; 
+        }
+        h1,h2{
+            text-align: right;
+        }
+        mat-card{
+            width: 90%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        tr:hover
+        {
+            background-color: #e215597e ;
+        }
+ 
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+        table { 
+            width: 100%; 
+            text-align: right;
+        }
+    
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+        }
+    
+        td:before { 
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            content: attr(data-column);
+    
+            color: #000;
+            font-weight: bold;
+        }
+    
+    }
+    .point:hover{
+        cursor: pointer;
+color: #e215597e ;
+    } */
+    table {
+        width: 100%;
+    }
+    
+    * {
+        direction: rtl;
+    }
+    
+    
+    /* table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 50px auto;
+        direction: rtl;
+        text-align: right;
+    } */
+    
+    
+    /* Zebra striping */
+    
+    
+    /* 
+    tr:nth-of-type(odd) {
+        background: #eee;
+    }
+    
+    th {
+        background: #e71264;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        text-align: center;
+    
+    
+    } */
+    
+    
+    /* 
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        text-align: right;
+    } */
+    
+    i {
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    i:hover {
+        color: #e21559;
+    }
+    
+    h1,
+    h2 {
+        text-align: right;
+    }
+    
+    mat-card {
+        width: 90%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    
+    /* tr:hover {
+        background-color: #e215597e;
+    } */
+    
+    
+    /* 
+    Max width before this PARTICULAR table gets nasty
+    This query will take effect for any screen smaller than 760px
+    and also iPads specifically.
+    */
+    
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+        table {
+            width: 100%;
+            text-align: right;
+        }
+        /* Force table to not be like tables anymore */
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        tr {
+            border: 1px solid #ccc;
+        }
+        td {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+        }
+        td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);
+            color: #000;
+            font-weight: bold;
+        }
+    }
+    
+    .inpbtn {
+        background-color: #e71264;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 20px;
+        border: 1px solid #7c7c7c;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-right: 10px;
+        text-align: center;
+    }
+    
+    
+    /* .divWar {
+        font-size: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #b61818;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        border: 5px solid #7c7c7c;
+        width: 100px;
+        float: right;
+    } */
+    
+    .divh1 {
+        border-radius: 5px;
+        /* margin: auto; */
+        background: #ffffff;
+        border: 10px solid #4d4646;
+        text-align: center;
+        border-top: 10px solid #e21559;
+        border-bottom: 10px solid #e21559;
+        font-size: 19px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: pointer;
+        color: #4d4646;
+        text-decoration: #e21559 underline;
+        width: 150px;
+        float: right;
+    }
+    
+    ::ng-deep .mat-ink-bar {
+        background-color: #e71264 !important;
+    }
+    
+    th {
+        /* background: #e71264; */
+        color: #e71264;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: right;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: default;
+    }
+    
+    td {
+        /* background: #e71264; */
+        color: #7c7c7c;
+        font-size: 15px;
+        text-align: right;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: default;
+    }
+    
+    th.mat-header-cell {
+        text-align: right;
+    }
+    
+    
+    /* mat-tab {
+        color: #e71264;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: right;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: default;
+    } */
+    
+    mat-icon {
+        color: #e71264;
+        margin: auto;
+    }
+    
+    ::ng-deep .mat-tab-label {
+        color: #7c7c7c;
+        font-size: 15px;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        cursor: default;
+        font-weight: bold;
+    }      
+    hr {
+        border-top: 3.5px dashed #7c7c7c;
+    }
+    
+    .AbDiv {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+        margin-left: 300px;
+    }
+    
+    .h1L {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        color: #e71264;
+    }
+    
+    .conDiv {
+        text-align: right;
+    }

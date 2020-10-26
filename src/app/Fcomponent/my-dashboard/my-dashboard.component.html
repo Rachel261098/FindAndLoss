@@ -1,0 +1,310 @@
+<!-- <mat-card class="container">
+  <button mat-button color="accent" style="float: left;" (click)="editUser()">עריכת פרטיך האישיים</button>
+
+
+<div>
+  <h1 style="text-align: right;">
+    שלום {{this.serviceP.user.name}}
+    
+  </h1>
+
+</div>
+
+
+  
+<h2 (click)="dispalyFound=!dispalyFound" style="text-align: center" class="point"> המציאות שלי </h2>
+<div [hidden]="!dispalyFound">
+<div *ngIf="this.serviceP.listMyFound.length!=0">
+  
+  <table>
+    <tr>      
+      <th>שם מוצר</th> 
+      <th>תאריך מציאה</th>
+      <th>מיקום</th>
+      <th>תאריך עדכון</th>
+      <th>חיפוש</th>
+      <th>עריכה</th>
+      <th>מחיקה</th>
+    </tr>
+    <tr *ngFor="let p of this.serviceP.listMyFound">
+      <td>{{p.describe}}</td>
+      <td>{{p.date_found_lost| date:'dd-MM-yyyy'}}</td>
+      <td>{{p.nameAddress}}</td>
+      <td>{{p.report_date| date:'dd-MM-yyyy'}}</td>
+          <td style="text-align: center;">
+            <i class="material-icons" (click)="searchOrEditItem(p.item_id)">
+              search
+              </i></td> 
+      <td style="text-align: center;"> 
+        <i class="material-icons"(click)="searchOrEditItem(p.item_id)">
+          edit
+          </i></td>
+ 
+      <td style="text-align: center;"> 
+        <i class="material-icons" (click)="delete(p.item_id)">
+          delete_forever
+          </i>
+      </td>
+   
+    </tr>
+  </table>
+    
+</div> 
+
+
+<div *ngIf="this.serviceP.listMyFound.length==0">
+<h3 style="text-align: center;">אין מציאות</h3>
+</div>
+</div> 
+
+ <h2 (click)="dispalyLost=!dispalyLost" style="text-align: center"  class="point"> האבדות שלי </h2>
+ <div [hidden]="!dispalyLost">
+<div *ngIf="this.serviceP.listMyLost.length!=0">
+ 
+  <table>
+    <tr>
+      <th>שם מוצר</th> 
+      <th>תאריך אבדה</th>
+      <th>מיקום</th>
+      <th>תאריך עדכון</th>
+      <th>חיפוש</th>
+      <th>עריכה</th>
+      <th>מחיקה</th>
+    </tr>
+    <tr *ngFor="let p of this.serviceP.listMyLost">
+      <td>{{p.describe}}</td>
+      <td>{{p.date_found_lost| date:'dd-MM-yyyy'}}</td>
+      <td>{{p.nameAddress}}</td>
+      <td>{{p.report_date| date:'dd-MM-yyyy'}}</td>
+      <td style="text-align: center;">
+        <i class="material-icons" (click)="searchOrEditItem(p.item_id)">
+          search
+          </i></td> 
+  <td style="text-align: center;"> 
+    <i class="material-icons"(click)="searchOrEditItem(p.item_id)">
+      edit
+      </i></td>
+
+  <td style="text-align: center;"> 
+    <i class="material-icons" (click)="delete(p.item_id)">
+      delete_forever
+      </i>
+  </td>
+    </tr>
+  </table>
+    
+</div> 
+<div *ngIf="this.serviceP.listMyLost.length==0" >
+  <h3 style="text-align: center;">אין אבדות</h3>
+  </div>
+</div>
+
+
+
+
+</mat-card> -->
+
+
+
+
+
+<!-- <app-edit-person [hidden]="hiddenEdit" (close)="hiddenEdit=$event"></app-edit-person> -->
+<!-- <router-outlet></router-outlet> -->
+
+
+<div class="container text-md-right conDiv">
+    <h1 class="h1L"> אזור אישי</h1>
+    <hr>
+    <br>
+    <br>
+<mat-card class="container matCard" >
+
+
+  
+  <div>
+      <h1>
+          שלום {{this.serviceP.user.name}}
+
+      </h1>
+
+      <button (click)="editUser()" class="inpbtn">עריכת פרטיך האישיים</button>
+  </div>
+  <br>
+  <br>
+  <mat-tab-group>
+      <mat-tab>
+          <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+              המציאות שלך
+          </ng-template>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> קוד מוצר </th>
+                  <td mat-cell *matCellDef="let element"> {{element.item_id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="describe">
+                  <th mat-header-cell *matHeaderCellDef> שם מוצר </th>
+                  <td mat-cell *matCellDef="let element"> {{element.describe}} </td>
+              </ng-container>
+              <ng-container matColumnDef="foundDate">
+                  <th mat-header-cell *matHeaderCellDef> תאריך מציאה </th>
+                  <td mat-cell *matCellDef="let element"> {{element.date_found_lost| date:'dd-MM-yyyy'}} </td>
+              </ng-container>
+              <ng-container matColumnDef="updateDate">
+                  <th mat-header-cell *matHeaderCellDef> תאריך עדכון </th>
+                  <td mat-cell *matCellDef="let element"> {{element.report_date| date:'dd-MM-yyyy'}}
+              </ng-container>
+              <ng-container matColumnDef="button">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element">
+                      <i class="material-icons" (click)="delete(element.item_id)"> delete_forever </i>
+
+                      <i class="material-icons" (click)="searchOrEditItem(element.item_id)"> edit </i>
+                      <i class="material-icons" (click)="searchOrEditItem(element.item_id)">
+            search
+          </i>
+
+                  </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+      </mat-tab>
+
+      <mat-tab>
+          <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">thumb_down_alt</mat-icon>
+              האבדות שלך
+          </ng-template>
+          <table mat-table [dataSource]="dataSourceLost" class="mat-elevation-z8">
+              <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> קוד מוצר </th>
+                  <td mat-cell *matCellDef="let element"> {{element.item_id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="describe">
+                  <th mat-header-cell *matHeaderCellDef> שם מוצר </th>
+                  <td mat-cell *matCellDef="let element"> {{element.describe}} </td>
+              </ng-container>
+              <ng-container matColumnDef="foundDate">
+                  <th mat-header-cell *matHeaderCellDef> תאריך מציאה </th>
+                  <td mat-cell *matCellDef="let element"> {{element.date_found_lost| date:'dd-MM-yyyy'}} </td>
+              </ng-container>
+              <ng-container matColumnDef="updateDate">
+                  <th mat-header-cell *matHeaderCellDef> תאריך עדכון </th>
+                  <td mat-cell *matCellDef="let element"> {{element.report_date| date:'dd-MM-yyyy'}}
+              </ng-container>
+              <ng-container matColumnDef="button">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element">
+                      <i class="material-icons" (click)="delete(element.item_id)"> delete_forever </i>
+
+                      <i class="material-icons" (click)="searchOrEditItem(element.item_id)"> edit </i>
+                      <i class="material-icons" (click)="searchOrEditItem(element.item_id)">
+            search
+          </i>
+
+                  </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+      </mat-tab>
+
+  </mat-tab-group>
+
+
+  <div>
+      <div *ngIf="this.serviceP.listMyFound.length!=0">
+          <!--      <table>
+              <tr>
+                  <th>קוד מוצר</th>
+                  <th>שם מוצר</th>
+                  <th>תאריך מציאה</th>
+                  <th>תאריך עדכון</th>
+                  <th>חיפוש</th>
+                  <th>עריכה</th>
+                  <th>מחיקה</th>
+              </tr>
+              <tr *ngFor="let p of this.serviceP.listMyFound">
+                  <td>{{p.item_id}} </td>
+                  <td>{{p.describe}}</td>
+                  <td>{{p.date_found_lost| date:'dd-MM-yyyy'}}</td>
+                  <td>{{p.report_date| date:'dd-MM-yyyy'}}</td>
+               <td style="text-align: center;">
+            <i class="material-icons" (click)="searchItem(p.item_id)">
+              search
+              </i></td> 
+      <td style="text-align: center;"> 
+        <i class="material-icons"(click)="editItem(p.item_id)">
+          edit
+          </i></td>
+ 
+      <td style="text-align: center;"> 
+        <i class="material-icons" (click)="delete(p.item_id)">
+          delete_forever
+          </i>
+      </td> 
+
+          </tr>
+          </table>-->
+
+      </div>
+  </div>
+  <br>
+  
+
+
+  <!-- <div>
+      <div *ngIf="this.serviceP.listMyLost.length!=0">
+
+          <table>
+              <tr>
+                  <th>קוד מוצר</th>
+                  <th>שם מוצר</th>
+                  <th>תאריך אבדה</th>
+                  <th>תאריך עדכון</th>
+                  <th>חיפוש</th>
+                  <th>עריכה</th>
+                  <th>מחיקה</th>
+              </tr>
+              <tr *ngFor="let p of this.serviceP.listMyLost">
+                  <td>{{p.item_id}} </td>
+                  <td>{{p.describe}}</td>
+                  <td>{{p.date_found_lost| date:'dd-MM-yyyy'}}</td>
+                  <td>{{p.report_date| date:'dd-MM-yyyy'}}</td>
+                  <td style="text-align: center;">
+                      <i class="material-icons" (click)="searchItem(p.item_id)">
+            search
+          </i></td>
+                  <td style="text-align: center;">
+                      <i class="material-icons" (click)="editItem(p.item_id)">
+            edit
+          </i></td>
+
+                  <td style="text-align: center;">
+                      <i class="material-icons" (click)="delete(p.item_id)">
+            delete_forever
+          </i>
+                  </td>
+              </tr>
+          </table>
+
+      </div>
+      <div *ngIf="this.serviceP.listMyLost.length==0" class="divWar">
+          <h2>אין אבדות</h2>
+      </div>
+  </div> -->
+
+
+
+
+</mat-card>
+
+
+</div>
+
+
+<!-- <app-edit-person [hidden]="hiddenEdit" (close)="hiddenEdit=$event"></app-edit-person> -->
+<router-outlet></router-outlet>
+

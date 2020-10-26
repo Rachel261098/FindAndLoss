@@ -1,0 +1,96 @@
+
+<div class="container text-md-right conDiv">
+    <h1 class="h1L" *ngIf="type =='lost'"> רשימת אבדות </h1>
+    <h1 class="h1L" *ngIf="type =='found'">  רשימת מציאות </h1>
+
+    <hr>
+    <br>
+    <br>
+<div class="container" style="text-align: right; ">
+<div class="panel panel-default col-md-12 col-sm-12" style="text-align: right; ">
+  
+    <mat-form-field class="example-full-width"  style="text-align: right;">
+      <i class="material-icons">
+search
+</i>‏
+      <mat-label >סינון על פי כתובת</mat-label>
+
+      <input matInput ngx-google-places-autocomplete #placesRef="ngx-places"  
+       name="place" #place (onAddressChange)="filter($event)"/>
+    </mat-form-field>
+  
+
+
+<div *ngIf="type==='found'">
+
+
+    <div *ngIf="this.serviceF.listFound!=0">
+        <table>
+            <tr>
+                <th>שם מוצר</th>
+                <th>מיקום</th>
+                <th>תאריך</th>
+                <th>הערות</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let i of this.serviceF.listFound">
+                <td>{{i.name}}</td>
+                <td>{{i.nameAddress}}</td>
+                <td>{{i.date| date:'dd-MM-yyyy'}}</td>
+                <td>{{i.comment}}</td>
+                <td style="text-align: center;">
+                  
+                  <i  class="material-icons" (click)="displyTextdMail(i.personMail)">‏
+                      email
+                      </i></td>          
+                      </tr>
+        </table>
+
+
+    </div>
+
+
+</div>
+<div *ngIf="type==='lost'">
+
+
+    <div *ngIf="this.serviceL.listLost!=0">
+        <table>
+            <tr>
+                <th>שם מוצר</th>
+                <th>מיקום</th>
+                <th>תאריך</th>
+                <th>הערות</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let i of this.serviceL.listLost">
+                <td>{{i.name}}</td>
+                <td>{{i.nameAddress}}</td>
+                <td>{{i.date| date:'dd-MM-yyyy'}}</td>
+                <td>{{i.comment}}</td>
+                <td style="text-align: center;">
+                  
+                  <i  class="material-icons" (click)="displyTextdMail(i.personMail)">‏email</i>
+                   </td>
+            </tr> 
+        </table>
+
+    </div>
+</div>
+
+<div *ngIf="textMail" class="sendMail">
+    <mat-card class="sendMail-content">
+      <mat-card-title style="color:#4d4646;">כתוב הודעה</mat-card-title>
+
+      <!-- <mat-form-field class="example-full-width"> -->
+        <textarea  [(ngModel)]="mail.message" name="m" style="height: 184px;text-align: right;"></textarea>
+      <!-- </mat-form-field> -->
+
+      <button style="float: left" mat-button color="accent"(click)="sendMail()" >שלח</button>
+      <button style="float: left" mat-button color="accent"(click)="cancel()" >ביטול</button>
+    </mat-card>
+  </div>
+
+</div>
+</div>
+</div>

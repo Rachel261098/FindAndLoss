@@ -1,0 +1,427 @@
+/* body {
+
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  } */
+/*   
+  label{
+    font-size: 25px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #e21559;
+  }
+
+  mat-datepicker{
+    color: #e21559;
+  }
+  mat-icon{
+    font-size: 25px;
+    color: #e21559;
+  }
+  form{ 
+
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #e21559;
+        border-radius: 5px;
+      border:10px grey solid ; 
+      max-width: 900px;
+      margin: auto;
+      padding: 50px;
+      background: #4d4646;
+     
+  }
+  
+.example-full-width {
+  width: 100%;
+} */
+         
+  /* ::ng-deep .mat-focused .mat-form-field-label { */
+    /*change color of label*/
+    /* color: #e21559 !important;
+   }
+   
+   ::ng-deep.mat-form-field-underline { */
+    /*change color of underline*/
+    /* background-color: #e21559 !important;
+   } 
+   
+   ::ng-deep.mat-form-field-ripple { */
+    /*change color of underline when focused*/
+    /* background-color: #e21559 !important;;
+   }
+   
+   ::ng-deep .mat-form-field-label { */
+    /*change color of label*/
+    /* color: #e21559 !important;
+   }
+   
+   
+   mat-datepicker-toggle {
+    color: #e21559 !important;
+   }
+   .mat-calendar-body-cell.selected
+   {
+     background-color:red!important;
+     border-radius: 50%
+   }
+   .drop-calendar
+   {
+     width:30rem
+   }
+
+   form{
+    border-radius: 5px;
+      max-width: 900px;
+    margin: auto;
+    padding: 50px;
+    background: #ffffff;
+    border: 5px solid #4d4646;
+    text-align: right;
+    width: 90%;
+     height: 100%;
+     border-top: 5px solid #e21559;
+     border-bottom: 5px solid #e21559;
+}
+
+input{
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000; */
+  /* border-radius: 5px;
+  border:2.5px grey solid ; */
+/* } 
+div.panel{
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
+  text-align: right;
+  border-bottom: 2px solid #e21559; */
+  /* border-radius: 5px;
+  border:2.5px grey solid ;  */
+/* }
+
+h1{
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #4d4646;
+  text-decoration: #e21559 underline;
+  text-align: right;
+}
+.inpbtn{
+  
+  background-color:#e71264;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border-radius:20px;
+  border:1px solid #7c7c7c;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:15px;
+  padding:10px 10px;
+  text-decoration:none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 10px;
+    text-align: center;
+}
+.inpbtn:hover{
+  
+ 
+  color: #000000;
+}
+.inpbtn:disabled{
+
+  cursor:default;
+   background-color: #7c7c7c;
+  color: #ffffff;
+} */
+/* ...... */
+ 
+
+/* . */
+  
+  /* Modal Content/Box */
+  /* .sendMail-content {
+      background-color: #fefefe;
+      margin: 5px auto; /* 15% from the top and centered */
+      /* border: 1px solid #888; */
+      /* width: 300px; Could be more or less, depending on screen size */
+  /* } */ 
+  
+  /* The Close Button */
+ 
+  
+  /* Add Zoom Animation */
+  /* .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+  } */
+
+  
+label {
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #e71264;
+}
+
+mat-datepicker {
+  color: #e71264;
+}
+
+mat-icon {
+  font-size: 25px;
+  color: #e71264;
+}
+
+form {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #e71264;
+  border-radius: 5px;
+  border: 10px grey solid;
+  max-width: 900px;
+  margin: auto;
+  padding: 50px;
+  background: #4d4646;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #e71264 !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #e71264 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #e71264 !important;
+  ;
+}
+
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: #e71264 !important;
+}
+
+mat-datepicker-toggle {
+  color: #e71264 !important;
+}
+
+.mat-calendar-body-cell.selected {
+  background-color: red!important;
+  border-radius: 50%
+}
+
+.drop-calendar {
+  width: 30rem
+}
+
+form {
+  border-radius: 5px;
+  max-width: 900px;
+  margin: auto;
+  padding: 50px;
+  background: #ffffff;
+  border: 5px solid #4d4646;
+  text-align: right;
+  width: 90%;
+  height: 100%;
+  border-top: 5px solid #e71264;
+  border-bottom: 5px solid #e71264;
+}
+
+input {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
+  /* border-radius: 5px;
+border:2.5px grey solid ; */
+}
+
+div.panel {
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #000000;
+  text-align: right;
+  border-bottom: 2px solid #e21559;
+  /* border-radius: 5px;
+border:2.5px grey solid ;  */
+}
+
+h1 {
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #4d4646;
+  text-decoration: #e21559 underline;
+  text-align: right;
+}
+
+.inpbtn {
+  background-color: #e71264;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 20px;
+  border: 1px solid #7c7c7c;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.inpbtn:hover {
+  color: #000000;
+}
+
+.inpbtn:disabled {
+  cursor: default;
+  background-color: #7c7c7c;
+  color: #ffffff;
+}
+
+
+/* ...... */
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 50px auto;
+  direction: rtl;
+  text-align: right;
+}
+
+
+/* Zebra striping */
+
+tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+th {
+  background: #e71264;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: center;
+}
+
+td {
+  color: #000000;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  text-align: right;
+}
+
+i {
+  cursor: pointer;
+  text-align: center;
+}
+
+i:hover {
+  color: #ffffff;
+}
+
+h1,
+h2 {
+  text-align: right;
+}
+
+tr:hover {
+  background-color: #e215597e;
+}
+
+.sendMail {
+  display: block;
+  /* Hidden by default */
+  position: absolute;
+  /* Stay in place */
+  z-index: 0;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 0%;
+}
+
+
+/* Modal Content/Box */
+
+.sendMail-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 250px; /* Could be more or less, depending on screen size */
+  height: 300px;
+}
+
+/* The Close Button */
+
+
+/* Add Zoom Animation */
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+.divWar {
+  background: #e71264;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+mat-label {
+  color: #e71264;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+.divWar2 {
+  background: #e71264; 
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+ height: 25px;
+}
+
+mat-progress-spinner {
+  position: relative;
+  margin-left: 50%;
+  margin-right: 50%;
+  -webkit-animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+  -webkit-animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+  animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infiniteף
+}

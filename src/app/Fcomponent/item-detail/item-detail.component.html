@@ -1,0 +1,43 @@
+
+<div style="width: 90%; height: 90%; " class="container" >
+
+  <div class="container text-md-right conDiv">
+    <h1 class="h1L"  *ngIf="type=='found'"> מציאה</h1> <h1 *ngIf="type=='lost'" class="h1L"> אבדה</h1>
+    <hr>
+    <br>
+    <br>
+
+   <app-selected-categoia (close)="changeCategoryId($event)"></app-selected-categoia>
+      
+   
+<div [hidden]="this.serviceC.filterListCategories.length==0" style="text-align: right;">
+  <mat-card-title style="color:#4d4646;">בחר קטגוריה תואמת לחפצך</mat-card-title>
+        <mat-card-subtitle>הוסף בעת הצורך קטגוריה נוספת</mat-card-subtitle>
+</div>
+<form class="form"  #formSearch="ngForm"  >  
+  <!-- <div class="row"> -->
+
+   <div>
+    <div class="containers" style="text-align: center">
+      <div *ngFor="let i of this.serviceC.filterListCategories" >
+     
+          <app-categoria [id]="i.category_id" [name]="i.describe" (click)="changeCategoryId(i.category_id)"></app-categoria>
+      </div>
+      <!-- <div class="col-md-4"  [hidden]="hiddenC"> -->
+          <div class="col-sm-4"   style="float: right" *ngIf="this.serviceC.filterListCategories.length!=0">
+      <div class="panel panel-default">
+       
+        <app-new-category (close)="changeCategoryId($event)" [iconPlus]="false"></app-new-category>
+      </div>
+    </div>
+    
+    </div>
+</div>  
+
+</form>
+</div>
+<app-form-item [hidden]="this.serviceC.filterListCategories.length!=0"  [type]="type"></app-form-item>
+
+
+
+</div>

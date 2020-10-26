@@ -1,0 +1,182 @@
+<!-- <h1 style="text-align: center;">עריכת פרטיך האישיים</h1>
+  <mat-card  class="container">
+       
+   <form  class="form" #formEditUser="ngForm" >
+         
+     <div class="form-group" dir="rtl">
+         <p>
+             <mat-form-field appearance="outline">
+               <mat-label> שם משתמש </mat-label>
+               <input matInput name="nameEdit" [(ngModel)]="editUser.name" #EditPersonName="ngModel"  minlength="2" pattern="[A-Za-zא-ת ]*" required>
+               <mat-icon matSuffix>tag_faces</mat-icon>
+              
+         <mat-error *ngIf="EditPersonName.hasError('required')">שם משתמש הוא שדה חובה</mat-error>
+         <mat-error *ngIf="EditPersonName.hasError('pattern')">שם לא תקין </mat-error>
+         <mat-error *ngIf="EditPersonName.hasError('minlength')">שם משתמש צריך להכיל לפחות 2 תוים</mat-error>
+ 
+             </mat-form-field>       
+     </p>
+     </div>
+           
+     
+  
+    <div class="form-group" dir="rtl">
+       <p>
+           <mat-form-field appearance="outline">
+             <mat-label> פלאפון </mat-label>
+             <input matInput [(ngModel)]="editUser.pelephon" name="pelephon" #EditPersonPelephon="ngModel" pattern="[0-9]*" minlength="10" maxlength="10">
+             <mat-icon matSuffix>phone_iphone</mat-icon>
+             
+               <mat-error *ngIf="EditPersonPelephon.hasError('pattern')">מספר פלאפון מכיל רק מספרים</mat-error>
+               <mat-error *ngIf="EditPersonPelephon.hasError('minlength')">פלאפון מכיל לפחות 10 ספרות</mat-error>
+               
+           </mat-form-field>       
+ </p>
+    </div>
+        
+  <div class="form-group" dir="rtl">
+     <p>
+         <mat-form-field appearance="outline">
+           <mat-label> מייל </mat-label>
+           <input matInput [(ngModel)]="editUser.mail" pattern="([0-9a-zA-Z]([_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$" name="mail" #EditPersonMail="ngModel" required>
+           <mat-icon matSuffix>email</mat-icon>
+           <mat-error *ngIf="EditPersonMail.hasError('required')">מייל הוא שדה חובה</mat-error>
+           <mat-error *ngIf="EditPersonMail.hasError('pattern')">מייל לא חוקי</mat-error>
+ 
+         </mat-form-field>       
+ </p>
+    </div>
+ 
+   <div class="form-group" dir="rtl">
+       <p>
+             <mat-form-field appearance="outline">
+             <mat-label> סיסמה </mat-label>
+             <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]=" editUser.password" name="password" #EditPersonPassword="ngModel" minlength="6" maxlength="10" required>
+              <i mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </i>
+            <mat-error *ngIf="EditPersonPassword.hasError('required')">שדה סיסמה הוא שדה חובה</mat-error>
+            <mat-error *ngIf="EditPersonPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+           </mat-form-field>       
+           
+   </p>
+    </div>
+ 
+  <div class="form-group" dir="rtl">
+      <p>     
+       <mat-form-field appearance="outline">
+         <mat-label> אימות הסיסמה </mat-label>
+         <input matInput [type]="hideCheckPassword ? 'password' : 'text'" [(ngModel)]="checkPassword" name="checkPassword" #EditPersonCheckPassword="ngModel" minlength="6" maxlength="10" required>
+  
+          <i mat-icon-button matSuffix (click)="hideCheckPassword = !hideCheckPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hideCheckPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </i>
+        <mat-error *ngIf="EditPersonCheckPassword.hasError('required')">שדה אימות סיסמה הוא שדה חובה</mat-error>
+        <mat-error *ngIf="EditPersonCheckPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+       </mat-form-field>       
+ </p>
+    </div>
+  
+   <button mat-button color="accent"(click)="editPerson()" [disabled]="!formEditUser.valid">שמור</button>
+    <button mat-button color="accent"(click)="cancel()">ביטול</button>
+   </form>
+   <div>{{err}}</div>
+  
+ </mat-card>
+  -->
+  <div class="container example-right-align" style="background-image: url(src\app\Fpicture\background-inner.jpg);">
+    <mat-card class="container">
+
+        <form class="form" #formEditUser="ngForm">
+
+            <div class="form-group" dir="rtl">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label> שם משתמש </mat-label>
+                        <input matInput name="nameEdit" [(ngModel)]="editUser.name" #EditPersonName="ngModel" minlength="2" pattern="[A-Za-zא-ת ]*" required>
+                        <mat-icon matSuffix>tag_faces</mat-icon>
+
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <mat-error *ngIf="EditPersonName.hasError('required')">שם משתמש הוא שדה חובה</mat-error>
+                        <mat-error *ngIf="EditPersonName.hasError('pattern')">שם לא תקין </mat-error>
+                        <mat-error *ngIf="EditPersonName.hasError('minlength')">שם משתמש צריך להכיל לפחות 2 תוים</mat-error>
+
+                    </mat-form-field>
+                </p>
+            </div>
+
+
+
+            <div class="form-group" dir="rtl">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label> פלאפון </mat-label>
+                        <input matInput [(ngModel)]="editUser.pelephon" name="pelephon" #EditPersonPelephon="ngModel" pattern="[0-9]*" minlength="10" maxlength="10">
+                        <mat-icon matSuffix>phone_iphone</mat-icon>
+                        <!-- <mat-hint>Hint</mat-hint> -->
+
+                        <mat-error *ngIf="EditPersonPelephon.hasError('pattern')">מספר פלאפון מכיל רק מספרים</mat-error>
+                        <mat-error *ngIf="EditPersonPelephon.hasError('minlength')">פלאפון מכיל לפחות 10 ספרות</mat-error>
+
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="form-group" dir="rtl">
+                <!-- להוסיף pattern של מייל -->
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label> מייל </mat-label>
+                        <input matInput [(ngModel)]="editUser.mail" pattern="([0-9a-zA-Z]([_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$" name="mail" #EditPersonMail="ngModel" required>
+                        <mat-icon matSuffix>email</mat-icon>
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <!-- <div *ngIf="EditPersonMail.invalid && (EditPersonMail.dirty ||EditPersonMail.touched)"></div> -->
+                        <mat-error *ngIf="EditPersonMail.hasError('required')">מייל הוא שדה חובה</mat-error>
+                        <mat-error *ngIf="EditPersonMail.hasError('pattern')">מייל לא חוקי</mat-error>
+
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div class="form-group" dir="rtl">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label> סיסמה </mat-label>
+                        <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]=" editUser.password" name="password" #EditPersonPassword="ngModel" minlength="6" maxlength="10" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+                        <mat-error *ngIf="EditPersonPassword.hasError('required')">שדה סיסמה הוא שדה חובה</mat-error>
+                        <mat-error *ngIf="EditPersonPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+                    </mat-form-field>
+
+                </p>
+            </div>
+
+            <div class="form-group" dir="rtl">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label> אימות הסיסמה </mat-label>
+                        <input matInput [type]="hideCheckPassword ? 'password' : 'text'" [(ngModel)]="checkPassword" name="checkPassword" #EditPersonCheckPassword="ngModel" minlength="6" maxlength="10" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                        <button mat-icon-button matSuffix (click)="hideCheckPassword = !hideCheckPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hideCheckPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+                        <mat-error *ngIf="EditPersonCheckPassword.hasError('required')">שדה אימות סיסמה הוא שדה חובה</mat-error>
+                        <mat-error *ngIf="EditPersonCheckPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+            <!-- <button type="submit" class="btn btn-success" [disabled]="!formEditUser.form.valid" (click)="addEditPerson()">שמור</button> -->
+            <!-- <mat-button-toggle value="underline" style="position: left" (click)="addEditPerson()">שמור</mat-button-toggle> -->
+            <button mat-fab class="btnCo" color="accent" (click)="cancel()">ביטול</button>
+            <button mat-fab class="btnCo" color="accent" (click)="editPerson()">שמור</button>
+
+        </form>
+        <div>{{err}}</div>
+
+    </mat-card>
+</div>

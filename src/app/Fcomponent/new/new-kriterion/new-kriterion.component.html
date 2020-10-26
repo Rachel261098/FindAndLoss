@@ -1,0 +1,90 @@
+
+<div class="modal"> 
+
+     
+<mat-card class="modal-content animate">
+  <mat-card-title style="color:#4d4646;">הוספת מאפיין</mat-card-title>
+  <mat-card-subtitle>נא מלא את השדות הבאים</mat-card-subtitle>
+  <mat-card-subtitle>כל השדות חובה</mat-card-subtitle>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>שם המאפיין</mat-label>
+    <input type="text"  required matInput name="name" [(ngModel)]="this.serviceK.NewKriterion.name" >
+    </mat-form-field>  
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>בחר סוג מאפיין</mat-label>
+    <mat-select (selectionChange)="changeValue($event.value)"  required [(ngModel)]="this.serviceK.NewKriterion.value_id" name="value_id" (change)="changeValue()" class="custom-select">
+      <mat-option [value]="null" disabled selected="true"> בחר סוג מאפיין  </mat-option>
+      <mat-option  *ngFor="let l of serviceV.listValues"  [value]="l.value_id">
+      {{l.translate}} 
+       </mat-option>
+   </mat-select>
+   </mat-form-field>
+   <!-- *ngIf="type==='lost'" -->
+   <!-- הצגת אפשדרויות סינון למאבד כמו בין קטן גדול -->
+   <mat-form-field *ngIf="type==='lost'" class="example-full-width" appearance="outline">
+    <mat-label>בחר סוג השוואה</mat-label>
+   <mat-select required [disabled]="this.serviceK.NewKriterion.value_id==null" [(ngModel)]="this.serviceK.NewKriterion.operator_id" name="operator_id" class="custom-select">
+    <mat-option [value]="null" disabled selected="true"> בחר סוג השוואה  </mat-option>
+          <mat-option *ngFor="let l of loL"  [value]="l.operator_id">
+            {{l.translate}} 
+       <!-- לשים לב לעשות pipe -->
+     </mat-option>
+   </mat-select>
+   </mat-form-field>
+   <!-- הצגת רק אפשרויות like in למוצא -->
+   <mat-form-field *ngIf="type==='found'&& opertorFound===true" class="example-full-width" appearance="outline">
+    <mat-label>בחר סוג השוואה</mat-label>
+   <mat-select required [(ngModel)]="this.serviceK.NewKriterion.operator_id" name="operator_id" class="custom-select" [hidden]="value!='text'">
+    <mat-option [value]="null" disabled selected="true"> בחר סוג השוואה  </mat-option>
+    <mat-option [hidden]="l.name!='like'&&l.name!='in'" *ngFor="let l of loF"   [value]="l.operator_id">
+        {{l.translate}} 
+        
+       </mat-option> 
+     </mat-select> 
+   </mat-form-field>
+   
+   
+     <div *ngIf="this.serviceK.NewKriterion.operator_id===1">
+       <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>הכנס אופציה לבחירה</mat-label>
+         <input matInput  [(ngModel)]="this.serviceK.NewKriterion.option_values" name="option_values" [type]="value">
+       </mat-form-field>
+        </div>
+        <mat-form-field   class="example-full-width" appearance="outline">
+          <mat-label> שייך מאפיין לקטגוריה </mat-label>
+   <mat-select required [(ngModel)]="this.serviceK.NewKriterion.category_id" name="category_id" class="custom-select">
+    <mat-option [value]="null" disabled selected="true"> שייך מאפיין לקטגוריה    </mat-option>
+    <mat-option  *ngFor="let l of serviceC.selectCategory"   [value]="l.category_id">
+      {{l.describe}} 
+    </mat-option>
+  </mat-select>
+        </mat-form-field>
+   
+       <div [hidden]="requieredData">
+         הכנסת הנתונים חובה
+       </div>
+       <!-- <br>
+
+        <button type="submit" pButton icon="pi pi-check" (click)="save()" label="אישור" ></button>
+        <button type="button" pButton icon="pi pi-close" (click)="cancel()" label="ביטול" class="ui-button-secondary"></button>
+   -->
+
+        
+<br>
+<div style="text-align: left;">
+
+
+<button type="submit" pButton icon="pi pi-check" (click)="save()" label="אישור" class="inpbtn btnYe" ></button>
+<button type="button" pButton icon="pi pi-times" (click)="cancel()" (click)="display=false" label="ביטול" class="ui-button-secondary" class="inpbtn"></button>
+</div>
+</mat-card>
+</div>
+      
+    
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<div class="panel panel-default col-sm-4 " style="float: right"></div>
+<div [ngSwitch]="operator">
+  <div *ngSwitchCase="'in'">
+    <mat-form-field class="example-full-width">
+      <mat-label>{{name}}</mat-label>
+      <mat-select [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value" (change)="add(numKriterion)">
+
+        <mat-option [value]="null" disabled selected="true"> בחר {{name}}
+        </mat-option>
+        <mat-option *ngFor="let l of listOptions" [value]="l">
+          {{l}}
+        </mat-option>
+        <mat-option [value]="0" (click)="add()">+</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div *ngIf="type=='lost'">
+    <div *ngSwitchCase="'<'">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{name}} גדול מ</mat-label>
+
+
+        <input [type]='value.name' matInput [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value">
+      </mat-form-field>
+    </div>
+    <div *ngSwitchCase="'>'">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{name}} קטן מ</mat-label>
+
+
+        <input [type]='value.name' matInput [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value">
+      </mat-form-field>
+    </div>
+
+    <!-- <div *ngSwitchCase="'between'">
+          <label>בין</label>
+          <input [type]='value.name' [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value">
+          <label>לבין</label>
+          <input [type]='value.name' [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value2">
+  </div> -->
+    <div *ngSwitchCase="'between'">
+      <mat-form-field class="example-full-width">
+        <mat-label>{{name}}</mat-label>
+        <br> <label style="color: #e21559;">בין</label>
+        <input [type]='value.name' matInput [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <label style="color: #e21559;">לבין</label>
+        <input [type]='value.name' matInput [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value2">
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <mat-form-field class="example-full-width">
+      <mat-label>{{name}}</mat-label>
+      <input [type]='value.name' matInput [(ngModel)]=" this.serviceKTI.listKTIedit[numKriterion].value">
+    </mat-form-field>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<header [hidden]="this.serviceP.user.name!=null">
+  
+        <mat-toolbar >
+          <mat-toolbar-row>
+              <span>למצוא בקליק</span>
+              <!-- <span class="example-spacer"></span> -->
+              <span><a ><img src="../../../assets/Fpicture/LogoP.jpg" alt="" class="imgNav"></a> </span>
+                 <span class="example-spacer"></span>
+                 <ul  class="nav nav-pills">
+                    <li class="nav-item"> <button mat-button [routerLink]="['/login']">כניסה</button></li>
+                 <li class="nav-item"> <button mat-button [routerLink]="['/newLogin']">הרשמה</button></li>
+          
+                 </ul>
+                
+           
+          </mat-toolbar-row>
+      </mat-toolbar>
+      <br />
+      <span><a href="menue.component.html"><img src="../../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav"></a></span>
+      <img src="../../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav">
+      
+      </header>
+      <div class="container text-md-right conDiv">
+        <h1 class="h1L"> כניסה</h1>
+        <hr>
+        <br>
+        <br>
+ <div class="container">
+
+        <mat-card style="width: 350px; height: 350px; " class="container ">
+                <mat-card-subtitle>נא מלא את פרטיך בשדות התואמים</mat-card-subtitle>
+  
+<form #formLogin="ngForm"  >
+        <div class="text-center border border-light p-5" dir="rtl">
+                <div>
+
+
+                        <p>
+                                <mat-form-field appearance="outline">
+                                        <mat-label>שם משתמש </mat-label>
+                                        <input matInput [(ngModel)]="user.name" name="mail" #UserName="ngModel"
+                                                minlength="2" pattern="[A-Za-zא-ת ]*" required>
+
+                                        <!-- <mat-hint>Hint</mat-hint> -->
+                                        <mat-icon matSuffix>tag_faces</mat-icon>
+                                        <mat-error *ngIf="UserName.hasError('required')">שם משתמש הוא שדה חובה
+                                        </mat-error>
+                                        <mat-error *ngIf="UserName.hasError('pattern')">שם לא תקין </mat-error>
+                                        <mat-error *ngIf="UserName.hasError('minlength')">שם משתמש צריך להכיל לפחות 2
+                                                תוים</mat-error>
+                                </mat-form-field>
+                        </p>
+                </div>
+
+                <div class="form-group" dir="rtl">
+
+                        <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label> סיסמה </mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password"
+                                        name="password" #passwordUser="ngModel" minlength="6" maxlength="10" required>
+                                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                                <i mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </i>
+                                <mat-error *ngIf="passwordUser.hasError('required')">שדה סיסמה הוא שדה חובה</mat-error>
+                                <mat-error *ngIf="passwordUser.hasError('minlength')">סיסמה מכילה לפחות 6 תוים
+                                </mat-error>
+                        </mat-form-field> 
+                        <a style="float: left;"   (click)="forgotPassword(user.name)">שכחת סיסמתך?</a>
+                </div>
+
+
+
+                <div>
+                        <label>
+                                <h4 [hidden]="!find1">  משתמש זה לא נמצא, הכנס שנית את הפרטים או <a   routerLink="/newLogin">הרשם</a></h4>
+                                     
+                        </label>
+                </div>
+                <!-- routerLink="/newLogin"> הרשם -->
+                <!-- <input type="submit" class="btn btn-sucsses" value="היכנס" (click)="enter()"> -->
+                <button mat-button  color="accent" type="submit" (click)="enter()" [disabled] = "!formLogin.valid" >היכנס</button>
+
+                <!-- <input type="button" class="btn btn-sucsses" value="הרשם" routerLink="/newLogin"> -->
+
+                <!-- </mat-card>
+</div>  -->
+        </div>
+</form>
+</mat-card>
+          </div>
+      </div>

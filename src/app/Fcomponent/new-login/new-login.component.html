@@ -1,0 +1,223 @@
+
+  <!-- <mat-card class="container">
+    <mat-card-title style="color:#4d4646;">הרשמה</mat-card-title>
+    <mat-card-subtitle>נא מלא את פרטיך בשדות התואמים</mat-card-subtitle> 
+   <form  class="form" #formNewUser="ngForm" >
+         
+     <div class="form-group" dir="rtl">
+         <p>
+             <mat-form-field class="example-full-width" appearance="outline">
+               <mat-label> שם משתמש </mat-label>
+               <input matInput name="nameNew" [(ngModel)]="newPerson.name" #newPersonName="ngModel"  minlength="2" pattern="[A-Za-zא-ת ]*" required>
+               <mat-icon matSuffix>tag_faces</mat-icon>
+               -->
+               <!-- <mat-hint>Hint</mat-hint> -->
+         <!-- <mat-error *ngIf="newPersonName.hasError('required')">שם משתמש הוא שדה חובה</mat-error>
+         <mat-error *ngIf="newPersonName.hasError('pattern')">שם לא תקין </mat-error>
+         <mat-error *ngIf="newPersonName.hasError('minlength')">שם משתמש צריך להכיל לפחות 2 תוים</mat-error>
+ 
+             </mat-form-field>       
+     </p>
+     </div>
+           
+     
+  
+    <div class="form-group" dir="rtl">
+       <p>
+           <mat-form-field class="example-full-width" appearance="outline">
+             <mat-label> פלאפון </mat-label>
+             <input matInput [(ngModel)]="newPerson.pelephon" name="pelephon" #newPersonPelephon="ngModel" pattern="[0-9]*" minlength="10" maxlength="10">
+             <mat-icon matSuffix>phone_iphone</mat-icon> -->
+             <!-- <mat-hint>Hint</mat-hint> -->
+             
+               <!-- <mat-error *ngIf="newPersonPelephon.hasError('pattern')">מספר פלאפון מכיל רק מספרים</mat-error>
+               <mat-error *ngIf="newPersonPelephon.hasError('minlength')">פלאפון מכיל לפחות 10 ספרות</mat-error>
+               
+           </mat-form-field>       
+ </p>
+    </div>
+        
+  <div class="form-group" dir="rtl"> -->
+     <!-- להוסיף pattern של מייל -->
+     <!-- <p>
+         <mat-form-field class="example-full-width" appearance="outline">
+           <mat-label> מייל </mat-label>
+           <input matInput [(ngModel)]="newPerson.mail" pattern="([0-9a-zA-Z]([_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$" name="mail" #newPersonMail="ngModel" required>
+           <mat-icon matSuffix>email</mat-icon> -->
+           <!-- <mat-hint>Hint</mat-hint> -->
+           <!-- <div *ngIf="newPersonMail.invalid && (newPersonMail.dirty ||newPersonMail.touched)"></div> -->
+           <!-- <mat-error *ngIf="newPersonMail.hasError('required')">מייל הוא שדה חובה</mat-error>
+           <mat-error *ngIf="newPersonMail.hasError('pattern')">מייל לא חוקי</mat-error>
+ 
+         </mat-form-field>       
+ </p>
+    </div>
+ 
+   <div class="form-group" dir="rtl">
+       <p>
+             <mat-form-field class="example-full-width" appearance="outline">
+             <mat-label> סיסמה </mat-label>
+             <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="newPerson.password" name="password" #newPersonPassword="ngModel" minlength="6" maxlength="10" required> -->
+              <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+              <!-- <mat-hint>Hint</mat-hint> -->
+              <!-- <i mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </i>
+            <mat-error *ngIf="newPersonPassword.hasError('required')">שדה סיסמה הוא שדה חובה</mat-error>
+            <mat-error *ngIf="newPersonPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+           </mat-form-field>       
+           
+   </p>
+    </div>
+ 
+  <div class="form-group" dir="rtl">
+      <p>     
+       <mat-form-field class="example-full-width" appearance="outline">
+         <mat-label> אימות הסיסמה </mat-label>
+         <input matInput [type]="hideCheckPassword ? 'password' : 'text'" [(ngModel)]="checkPassword" name="checkPassword" #newPersonCheckPassword="ngModel" minlength="6" maxlength="10" required> -->
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+          <!-- <i mat-icon-button matSuffix (click)="hideCheckPassword = !hideCheckPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hideCheckPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </i>
+        <mat-error *ngIf="newPersonCheckPassword.hasError('required')">שדה אימות סיסמה הוא שדה חובה</mat-error>
+        <mat-error *ngIf="newPersonCheckPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+       </mat-form-field>       
+ </p>
+    </div> -->
+   <!-- <button type="submit" class="btn btn-success" [disabled]="!formNewUser.form.valid" (click)="addNewPerson()">שמור</button> -->
+   <!-- <mat-button-toggle value="underline" style="position: left" (click)="addNewPerson()">שמור</mat-button-toggle> -->
+<!--  
+   <button mat-button  style="float: left;" color="accent"(click)="addNewPerson()" [disabled] = "!formNewUser.valid">הרשם</button>
+  
+   </form>
+   <div>{{err}}</div>
+  
+ </mat-card> -->
+ <header [hidden]="this.serviceP.user.name!=null">
+  
+  <mat-toolbar >
+    <mat-toolbar-row>
+        <span>למצוא בקליק</span>
+        <!-- <span class="example-spacer"></span> -->
+        <span><a ><img src="../../../assets/Fpicture/LogoP.jpg" alt="" class="imgNav"></a> </span>
+           <span class="example-spacer"></span>
+           <ul  class="nav nav-pills">
+              <li class="nav-item"> <button mat-button [routerLink]="['/login']">כניסה</button></li>
+           <li class="nav-item"> <button mat-button [routerLink]="['/newLogin']">הרשמה</button></li>
+    
+           </ul>
+          
+     
+    </mat-toolbar-row>
+</mat-toolbar>
+<br />
+<span><a href="menue.component.html"><img src="../../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav"></a></span>
+<img src="../../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav">
+
+</header>
+
+<div class="container text-md-right conDiv">
+  <h1 class="h1L"> הרשמה</h1>
+  <hr>
+  <br>
+  <br>
+
+ <div class="container example-right-align">
+   
+  <mat-card style="width: 300px; height: 560px; " class="container ">
+       
+   <form  class="form" #formNewUser="ngForm" >
+         
+     <div class="form-group" dir="rtl">
+         <p>
+             <mat-form-field appearance="outline">
+               <mat-label> שם משתמש </mat-label>
+               <input matInput name="nameNew" [(ngModel)]="newPerson.name" #newPersonName="ngModel"  minlength="2" pattern="[A-Za-zא-ת ]*" required>
+               <mat-icon matSuffix>tag_faces</mat-icon>
+              
+               <!-- <mat-hint>Hint</mat-hint> -->
+         <mat-error *ngIf="newPersonName.hasError('required')">שם משתמש הוא שדה חובה</mat-error>
+         <mat-error *ngIf="newPersonName.hasError('pattern')">שם לא תקין </mat-error>
+         <mat-error *ngIf="newPersonName.hasError('minlength')">שם משתמש צריך להכיל לפחות 2 תוים</mat-error>
+ 
+             </mat-form-field>       
+     </p>
+     </div>
+           
+     
+  
+    <div class="form-group" dir="rtl">
+       <p>
+           <mat-form-field appearance="outline">
+             <mat-label> פלאפון </mat-label>
+             <input matInput [(ngModel)]="newPerson.pelephon" name="pelephon" #newPersonPelephon="ngModel" pattern="[0-9]*" minlength="10" maxlength="10">
+             <mat-icon matSuffix>phone_iphone</mat-icon>
+             <!-- <mat-hint>Hint</mat-hint> -->
+             
+               <mat-error *ngIf="newPersonPelephon.hasError('pattern')">מספר פלאפון מכיל רק מספרים</mat-error>
+               <mat-error *ngIf="newPersonPelephon.hasError('minlength')">פלאפון מכיל לפחות 10 ספרות</mat-error>
+               
+           </mat-form-field>       
+ </p>
+    </div>
+        
+  <div class="form-group" dir="rtl">
+     <!-- להוסיף pattern של מייל -->
+     <p>
+         <mat-form-field appearance="outline">
+           <mat-label> מייל </mat-label>
+           <input matInput [(ngModel)]="newPerson.mail" pattern="([0-9a-zA-Z]([_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$" name="mail" #newPersonMail="ngModel" required>
+           <mat-icon matSuffix>email</mat-icon>
+           <!-- <mat-hint>Hint</mat-hint> -->
+           <!-- <div *ngIf="newPersonMail.invalid && (newPersonMail.dirty ||newPersonMail.touched)"></div> -->
+           <mat-error *ngIf="newPersonMail.hasError('required')">מייל הוא שדה חובה</mat-error>
+           <mat-error *ngIf="newPersonMail.hasError('pattern')">מייל לא חוקי</mat-error>
+ 
+         </mat-form-field>       
+ </p>
+    </div>
+ 
+   <div class="form-group" dir="rtl">
+       <p>
+             <mat-form-field appearance="outline">
+             <mat-label> סיסמה </mat-label>
+             <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="newPerson.password" name="password" #newPersonPassword="ngModel" minlength="6" maxlength="10" required>
+              <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+              <!-- <mat-hint>Hint</mat-hint> -->
+              <i mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                   <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </i>
+            <mat-error *ngIf="newPersonPassword.hasError('required')">שדה סיסמה הוא שדה חובה</mat-error>
+            <mat-error *ngIf="newPersonPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+           </mat-form-field>       
+           
+   </p>
+    </div>
+ 
+  <div class="form-group" dir="rtl">
+      <p>     
+       <mat-form-field appearance="outline">
+         <mat-label> אישור הסיסמה </mat-label>
+         <input matInput [type]="hideCheckPassword ? 'password' : 'text'" [(ngModel)]="checkPassword" name="checkPassword" #newPersonCheckPassword="ngModel" minlength="6" maxlength="10" required>
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
+          <i mat-icon-button matSuffix (click)="hideCheckPassword = !hideCheckPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hideCheckPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </i>
+        <mat-error *ngIf="newPersonCheckPassword.hasError('required')">שדה אימות סיסמה הוא שדה חובה</mat-error>
+        <mat-error *ngIf="newPersonCheckPassword.hasError('minlength')">סיסמה מכילה לפחות 6 תוים</mat-error>
+       </mat-form-field>       
+ </p>
+    </div>
+   <!-- <button type="submit" class="btn btn-success" [disabled]="!formNewUser.form.valid" (click)="addNewPerson()">שמור</button> -->
+   <!-- <mat-button-toggle value="underline" style="position: left" (click)="addNewPerson()">שמור</mat-button-toggle> -->
+ 
+   <button mat-fab color="accent"(click)="addNewPerson1()" [disabled]="!formNewUser.form.valid" >שמור</button>
+  
+   </form>
+   <div>{{err}}</div>
+  
+ </mat-card>
+ </div>
+</div>

@@ -1,0 +1,95 @@
+
+<!-- <div class="navbar navbar-default ppp">
+    <div class="container-fluid"> -->
+        <!-- <ul class="nav nav-pills pull-right">
+            <li class="pull-right"><a routerLink="/home">דף הבית</a></li>
+            <li class="pull-right"><a (click)="resetData('found')" >מציאה</a></li>
+            <li class="pull-right"><a (click)="resetData('lost')">אבדה</a></li>
+            <li class="pull-right"><a [routerLink]="['/login']">כניסה</a></li>
+            <li class="pull-right"><a [routerLink]="['/newLogin']">הרשמה</a></li>
+            <li class="pull-right"><a [routerLink]="['/MyDashboard']">אזור אישי</a></li>
+        </ul>      -->
+        <!-- <button mat-button routerLink="/home" >דף הבית</button>
+        <button mat-button [routerLink]="['/login']" >כניסה</button>
+        <button mat-button [routerLink]="['/newLogin']">הרשמה</button>
+        <button mat-button [routerLink]="['/MyDashboard']" >אזור אישי</button>
+        <button mat-button [matMenuTriggerFor]="FoundMenu">מציאה</button>
+        <mat-menu #FoundMenu="matMenu" yPosition="below">
+          <button mat-menu-item (click)="moveToTable(F)">רשימת מציאות</button>
+          <button mat-menu-item (click)="resetData('found')">טופס מציאה</button>
+        </mat-menu>   
+        <button mat-button [matMenuTriggerFor]="LostMenu">אבדה</button>
+        <mat-menu #LostMenu="matMenu" yPosition="below">
+          <button mat-menu-item (click)="moveToTable(L)">רשימת אבדות</button>
+          <button mat-menu-item (click)="resetData('lost')">טופס אבדה</button>
+        </mat-menu>   
+
+  
+    </div>
+</div>
+
+
+
+
+<div dir="rtl">
+        <div>
+            <h6 style="float: left" *ngIf="this.serviceP.user.name!=null">שלום {{this.serviceP.user.name}}  </h6>
+        </div>
+        <div>
+            <h6 style="float: left" *ngIf="this.serviceP.user.name===null">שלום אורח </h6>
+        </div>
+    <p-menubar [model]="items"  styleClass="aaa" ></p-menubar>
+    
+    </div> -->
+
+<div>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>למצוא בקליק</span>
+            <!-- <span class="example-spacer"></span> -->
+            <span><a ><img src="../../assets/Fpicture/LogoP.jpg" alt="" class="imgNav"></a> </span>
+            <span class="example-spacer"></span>
+            <ul class="nav nav-pills">
+               
+                <!-- <li class="nav-item"> <button mat-button [routerLink]="['/search/',f]"> מציאה</button></li> -->
+                       <li class="nav-item"> <button mat-button [routerLink]="['/MyDashboard']">אזור אישי</button></li>
+                <li class="nav-item"> <button mat-button  [matMenuTriggerFor]="FoundMenu">מציאה
+                        <mat-menu #FoundMenu="matMenu" class="btnmtmu"xPosition="before">
+                            <button mat-menu-item class="btnmtmu" (click)="moveToTable(F)">רשימת מציאות</button>
+                            <button mat-menu-item class="btnmtmu"  (click)="resetData('found')">טופס מציאה</button>
+                        </mat-menu>
+                    </button>
+                </li>
+                <li class="nav-item"> <button mat-button  [matMenuTriggerFor]="appMenu">אבדה
+                    <mat-menu #appMenu="matMenu" class="btnmtmu" xPosition="before">
+                        <button mat-menu-item class="btnmtmu" (click)="moveToTable(L)">רשימת אבדות</button>
+                        <button mat-menu-item class="btnmtmu"  (click)="resetData('lost')">טופס אבדה</button>
+                    </mat-menu>
+                </button>
+            </li>
+            <li class="nav-item"> <button mat-button routerLink="/home"> אודות</button></li>
+                <li class="nav-item"> <button mat-button [routerLink]="['/login']">כניסה</button></li>
+                <li class="nav-item"> <button mat-button [routerLink]="['/newLogin']">הרשמה</button></li>
+         
+                <!-- <li class="nav-item"><a [routerLink]="['/search/',f]">מציאה</a></li>
+            <li class="nav-item"><a [routerLink]="['/search/',l]">אבדה</a></li>
+            <li class="nav-item"><a [routerLink]="['/login']">כניסה</a></li>
+            <li class="nav-item"><a [routerLink]="['/newLogin']">הרשמה</a></li>
+            <li class="nav-item"><a [routerLink]="['/MyDashboard']">אזור אישי</a></li> -->
+            </ul>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <br />
+    <span><a href="menue.component.html"><img src="../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav"></a></span>
+    <img src="../../assets/Fpicture/LogoP.jpn" alt="" class="imgNav">
+    <!-- <div dir="rtl">
+        <div>
+            <h6 style="float: left" *ngIf="this.serviceP.user.name!=null">שלום {{this.serviceP.user.name}} </h6>
+        </div>
+        <div>
+            <h6 style="float: left" *ngIf="this.serviceP.user.name===null">שלום אורח </h6>
+        </div>
+        <p-menubar [model]="items" styleClass="aaa"></p-menubar>
+     -->
+    
+          </div>
